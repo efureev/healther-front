@@ -1,0 +1,37 @@
+{
+  "open to user!": "Открыто юзеру!",
+  "Dashboard": "Главная",
+  "Space": "Персональное пространство",
+  "Icons": "Иконки",
+  "Back": "Назад",
+  "Main": "Главная",
+  "Page not found": "Страница не найдена",
+  "button": {
+    "about": "About",
+    "back": "Назад",
+    "go": "Перейти",
+    "home": "Главная",
+    "toggle_dark": "Переключить темную тему",
+    "toggle_langs": "Сменить язык"
+  },
+  "app": {
+    "profile": "Профиль",
+    "login": "Войти"
+  },
+  "menu": {
+    "Home": "Главная",
+    "Admin": "Админка",
+    "Space": "Пространство",
+    "Profile": "Профиль"
+  },
+  "pages": {
+    "private": "Private",
+    "login": "логин"
+  },
+  "intro": {
+    "desc": "Opinionated Vite Starter Template",
+    "dynamic-route": "Demo of dynamic route",
+    "hi": "Hi, {name}!",
+    "whats-your-name": "What's your name?"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "Dashboard": "Dashboard",
+  "Space": "Space",
+  "Icons": "Icons",
+  "Back": "Back",
+  "Main": "Main",
+  "Page not found": "Page not found",
+  "open to user!": "Open to user!",
+  "button": {
+    "about": "About",
+    "back": "Back",
+    "go": "GO",
+    "home": "Home",
+    "toggle_dark": "Toggle dark mode",
+    "toggle_langs": "Change languages"
+  },
+  "app": {
+    "profile": "Profile",
+    "login": "Login"
+  },
+  "menu": {
+    "Home": "Home",
+    "Admin": "Admin",
+    "Space": "Space",
+    "Profile": "Profile"
+  },
+  "pages": {
+    "private": "Private",
+    "login": "login"
+  },
+  "intro": {
+    "desc": "Opinionated Vite Starter Template",
+    "dynamic-route": "Demo of dynamic route",
+    "hi": "Hi, {name}!",
+    "whats-your-name": "What's your name?"
+  }
+}
