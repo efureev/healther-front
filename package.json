@@ -15,9 +15,11 @@
     "lint": "eslint --ext .js,.vue,.ts ."
   },
   "dependencies": {
+    "@feugene/mu": "^4.3.0",
     "@intlify/unplugin-vue-i18n": "^0.10.0",
     "dayjs": "^1.11.7",
     "element-plus": "^2.3.4",
+    "ofetch": "^1.0.1",
     "petite-vue-i18n": "^9.2.2",
     "pinia": "2.0.35",
     "vue": "^3.2.47",

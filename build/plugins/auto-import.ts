@@ -20,7 +20,7 @@ export default function setupAutoImport() {
       ElementPlusResolver({
         ssr: true,
         // importStyle: 'css',
-        // importStyle: 'sass'
+        importStyle: 'sass',
       })],
     eslintrc: {
       enabled: false, // Default `false`

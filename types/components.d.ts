@@ -10,6 +10,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AuthRedirect: typeof import('./../src/components/Auth/Redirect.vue')['default']
+    CircleStatus: typeof import('./../src/components/CircleStatus.vue')['default']
     CommonFooter: typeof import('./../src/components/common/Footer.vue')['default']
     DarkSwitcher: typeof import('./../src/components/DarkSwitcher.vue')['default']
     ElButton: typeof import('element-plus/lib')['ElButton']
@@ -18,10 +19,13 @@ declare module '@vue/runtime-core' {
     ElMain: typeof import('element-plus/lib')['ElMain']
     HeartbeatBar: typeof import('./../src/components/HeartbeatBar.vue')['default']
     IconCarbonCampsite: typeof import('~icons/carbon/campsite')['default']
-    IconCarbonDicomOverlay: typeof import('~icons/carbon/dicom-overlay')['default']
     IconCarbonHome: typeof import('~icons/carbon/home')['default']
-    IconCarbonVirtualPrivateCloud: typeof import('~icons/carbon/virtual-private-cloud')['default']
     IconCarbonWarning: typeof import('~icons/carbon/warning')['default']
+    Monitor: typeof import('./../src/components/Monitor/index.vue')['default']
+    MonitorBlock: typeof import('./../src/components/Monitor/Block.vue')['default']
+    MonitorCircleStatus: typeof import('./../src/components/Monitor/CircleStatus.vue')['default']
+    MonitorEndpoint: typeof import('./../src/components/Monitor/Endpoint.vue')['default']
+    MonitorList: typeof import('./../src/components/MonitorList.vue')['default']
     Navbar: typeof import('./../src/components/Navbar.vue')['default']
     Progress: typeof import('./../src/components/Progress.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

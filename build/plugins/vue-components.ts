@@ -21,7 +21,7 @@ export default function setupVueComponents() {
       ElementPlusResolver({
         ssr: true,
         // importStyle: 'css',
-        // importStyle: 'sass'
+        importStyle: 'sass',
       }),
     ],
     directoryAsNamespace: true,

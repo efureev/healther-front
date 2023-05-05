@@ -14,6 +14,7 @@ export default function setupUnoCSS() {
         'border-base': 'border-gray-200 dark:border-dark-100',
         'border-dark-only': 'border-transparent dark:border-dark-100',
         'bg-base': 'bg-white dark:bg-[#181818]',
+        'bg-pane-base': 'bg-white dark:bg-[#161616]',
         'color-base': 'text-gray-900 dark:text-gray-300',
         'color-fade': 'text-gray-900:50 dark:text-gray-300:50',
         'icon-button': 'op50 hover:op100 my-auto',

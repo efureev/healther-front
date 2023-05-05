@@ -1,7 +1,8 @@
 import { makeApp } from './main'
 import '@unocss/reset/tailwind.css'
-import '@/assets/css/index.css'
+import '@/assets/styles'
 import 'virtual:uno.css'
+
 import { getAppRouteCtx } from '@/utils/routeCtx'
 
 const routeCtx = getAppRouteCtx(new URL(window.location.href))

@@ -504,6 +504,11 @@
     jsonc-eslint-parser "^2.2.0"
     yaml-eslint-parser "^1.2.0"
 
+"@feugene/mu@^4.3.0":
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@feugene/mu/-/mu-4.3.0.tgz#e33ccba8b003f3c09cdcd357aebe5c22665ea25a"
+  integrity sha512-2AtSidIIWNp+YEEXtML1jFbOsXzND+FnVHoIMaFTfS4rzE416pEEHgyUmkQHFR0XJlktNfOG5aF5iETYZIP0kg==
+
 "@floating-ui/core@^1.2.6":
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/@floating-ui/core/-/core-1.2.6.tgz#d21ace437cc919cdd8f1640302fa8851e65e75c0"

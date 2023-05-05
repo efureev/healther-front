@@ -1,0 +1,17 @@
+.bg {
+  &-green {
+    background-color: rgba(74, 222, 128, 1);
+  }
+
+  &-red {
+    background-color: rgba(248, 113, 113, 1);
+  }
+
+  &-yellow {
+    background-color: rgba(250, 204, 21, 1);
+  }
+
+  &-gray {
+    background-color: rgb(71, 86, 96);
+  }
+}

@@ -9,9 +9,6 @@ declare global {
     lastBuildTime: string
   }
 
-  type Nullable<T> = T | null
-  type Recordable<T = any> = Record<string, T>
-
   interface ViteEnv {
     VITE_PORT: number
     VITE_USE_MOCK: boolean
