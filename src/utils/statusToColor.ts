@@ -2,5 +2,5 @@
 import { StatusColorEnum, type StatusEnum } from '@/enums/Status'
 
 export function statusToColor(status: StatusEnum): StatusColorEnum {
-  return StatusColorEnum[status] ?? 'gray'
+  return StatusColorEnum[status]
 }

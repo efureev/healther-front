@@ -19,6 +19,7 @@ declare module '@vue/runtime-core' {
     ElMain: typeof import('element-plus/lib')['ElMain']
     ElSlider: typeof import('element-plus/lib')['ElSlider']
     IconCarbonCampsite: typeof import('~icons/carbon/campsite')['default']
+    IconCarbonCircleFilled: typeof import('~icons/carbon/circle-filled')['default']
     IconCarbonHome: typeof import('~icons/carbon/home')['default']
     IconCarbonWarning: typeof import('~icons/carbon/warning')['default']
     Monitor: typeof import('./../src/components/Monitor/index.vue')['default']

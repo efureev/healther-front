@@ -14,10 +14,10 @@ const color = (status: StatusEnum) => statusToColor(status)
 </script>
 
 <template>
-  <div class="i-carbon-circle-filled" :class="`text-${color(status)}`" :title="title" :style="`width:${sizeRem}rem; height:${sizeRem}rem;`" />
+  <div :class="`text-${color(status)}`" class="i-carbon-circle-filled" :title="title" :style="`width:${sizeRem}rem; height:${sizeRem}rem;`" />
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .text {
   &-green {
     background-color: rgba(74, 222, 128, 1);
