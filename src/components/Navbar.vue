@@ -25,7 +25,9 @@ const isHomepage = computed(() => route.path === '/')
       <h1 absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center text-xl font-light tracking-2px pointer-events-none>
         Healther
       </h1>
-      <a class="non-dragging" i-carbon-logo-github icon-button flex-none href="https://github.com/antfu/icones" target="_blank" title="GitHub" />
+      <SizeSlider class="size-slider" w20 />
+
+      <a class="non-dragging" i-carbon-logo-github icon-button flex-none href="https://github.com/efureev/healther-front" target="_blank" title="GitHub" />
       <RouterLink class="non-dragging" i-carbon-settings icon-button flex-none to="/settings" title="Settings" />
       <DarkSwitcher flex-none />
     </template>

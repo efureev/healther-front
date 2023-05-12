@@ -1,17 +1,50 @@
+// Colors
 .bg {
   &-green {
     background-color: rgba(74, 222, 128, 1);
+
+    &.selected {
+      border: 2px solid white;
+    }
   }
 
   &-red {
     background-color: rgba(248, 113, 113, 1);
+
+    &.selected {
+      border: 2px solid white;
+    }
   }
 
   &-yellow {
     background-color: rgba(250, 204, 21, 1);
+
+    &.selected {
+      border: 2px solid white;
+    }
   }
 
   &-gray {
     background-color: rgb(71, 86, 96);
   }
+}
+
+// Sizes
+//$sizes: 3, 4, 5, 6, 7;
+
+.block-size {
+  @for $i from 1 to 6 {
+    &-#{$i} {
+      .monitor {
+        width: #{80 * ($i+2)}px;
+      }
+    }
+  }
+  //@each $size in $sizes {
+  //  &-#{$size} {
+  //    .endpoint {
+  //      width: 50 * #{$size};
+  //    }
+  //  }
+  //}
 }

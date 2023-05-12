@@ -8,8 +8,15 @@ export class LimitedQueue<T> {
 
   // public data: UnwrapNestedRefs<{ items: T[] }> = reactive<{ items: T[] }>({ items: [] })
 
-  constructor(limit: number) {
+  constructor(limit: number, items: T[] = []) {
     this.limit = limit
+    this.fillItems(items)
+  }
+
+  public fillItems(items: T[]): void {
+    items.forEach((v) => {
+      this.push(v)
+    })
   }
 
   public push(item: T): void {
@@ -46,9 +53,13 @@ export class LimitedQueue<T> {
   //   return computed(() => unref(this.data)[this.size() - 1])
   // }
 
-  // public reset(): void {
-  //   this.data.length = 0
-  // }
+  public reset(): void {
+    this.data.value.length = 0
+  }
+
+  public setLimit(size: number): void {
+    this.limit = size
+  }
 
   /*
   public computedCount(): ComputedRef<number> {

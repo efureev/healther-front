@@ -31,7 +31,10 @@ export interface HeartBeatEvent {
   endpoint: HeartBeatEndpoint,
   rulesResult: RulesResult,
   processing: {
-    duration: number
+    duration: {
+      value: number,
+      str: string,
+    }
     error: string
   }
 }

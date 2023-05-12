@@ -2,6 +2,7 @@
 import { useMonitor } from '@/store/monitor'
 import { useMonitors } from '@/store/monitors'
 import { useWsEventsRouter } from '@/services/WsEventsRouter'
+import { monitorBlockSize } from '@/store'
 
 const serviceStore = useMonitor()
 const monitorStore = useMonitors()
@@ -17,7 +18,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div v-for="service in serviceStore.serviceList" :key="service.url">
-    <Monitor :service="service" />
+  <div :class="`block-size-${monitorBlockSize}`" flex="~ wrap">
+    <template v-for="service in serviceStore.serviceList" :key="service.url">
+      <Monitor :service="service" />
+    </template>
   </div>
 </template>

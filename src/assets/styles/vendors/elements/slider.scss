@@ -1,0 +1,26 @@
+.size-slider {
+  .el-slider {
+    &__runway {
+      @apply
+      bg-black-900 dark:bg-dark-400
+    }
+
+    &__stop {
+      @apply
+      bg-black-900 dark:bg-dark-600
+    }
+
+    &__bar {
+      @apply
+      bg-gray dark:bg-dark-200
+    }
+
+    &__button {
+      @apply
+      bg-base
+      border-color-gray dark:border-color-dark-300
+      w2;
+      border-radius: 2px;
+    }
+  }
+}

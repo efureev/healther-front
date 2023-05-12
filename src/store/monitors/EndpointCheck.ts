@@ -7,6 +7,7 @@ interface errorsMap {
 }
 
 export class EndpointCheck {
+  public readonly id: number
   public readonly result: HeartBeatEvent
 
   // public readonly status: StatusEnum
@@ -17,7 +18,8 @@ export class EndpointCheck {
 
   // public readonly status: ComputedRef<StatusEnum> = computed(() => this.compute())
 
-  constructor(result: HeartBeatEvent) {
+  constructor(id: number, result: HeartBeatEvent) {
+    this.id = id
     this.result = result
 
     this.buildErrorMap()

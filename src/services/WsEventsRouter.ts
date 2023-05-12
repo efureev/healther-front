@@ -41,6 +41,7 @@ export class WsEventsRouter {
 
     this.ws.onmessage = (router => function (msg: MessageEvent) {
       router.pushEvent(msg)
+      // console.log(performance.memory)
     })(this)
   }
 

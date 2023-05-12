@@ -3,7 +3,5 @@ import { monitorBlockSize } from '@/store'
 </script>
 
 <template>
-  <div flex="~ gap1 none">
-    <MonitorList :size="monitorBlockSize" />
-  </div>
+  <el-slider v-model="monitorBlockSize" size="small" :min="1" :max="5" show-stops />
 </template>

@@ -6,23 +6,47 @@ import type { HeartBeatEvent } from '@/@types/events'
 import { StatusEnum } from '@/enums/Status'
 import type { Status } from '@/@types/monitor'
 
+interface EndPointMonitorOptions {
+  queueLimit: number
+}
+
+function fillDefaultOptions(opt: Partial<EndPointMonitorOptions>): EndPointMonitorOptions {
+  if (!opt.queueLimit)
+    opt.queueLimit = 20
+
+  return <EndPointMonitorOptions>opt
+}
+
 export default class EndpointMonitor {
   public readonly id: string
   public readonly name: string
   public readonly url: string
   public readonly beatCount: Ref<number> = ref(0)
-  public readonly checks = new LimitedQueue<EndpointCheck>(20)
+  public readonly checks: LimitedQueue<EndpointCheck>
   public readonly lastCheck: Ref<Nullable<EndpointCheck>> = ref(null)
 
-  constructor(endpoint: EndPoint) {
+  constructor(endpoint: EndPoint, opt: Partial<EndPointMonitorOptions> = {}) {
     this.id = endpoint.id
     this.url = endpoint.url
     this.name = endpoint.name
+
+    const options = fillDefaultOptions(opt)
+
+    this.checks = new LimitedQueue<EndpointCheck>(options.queueLimit)
+  }
+
+  public resizeQueue(size: number) {
+    const elements = this.checks.toArray()
+    const lastLimitedBeats = elements.slice(-size)
+
+    this.checks.reset()
+    this.checks.setLimit(size)
+    this.checks.fillItems(lastLimitedBeats)
   }
 
   public addCheck(heartBeat: HeartBeatEvent) {
     this.incBeat()
-    const check = new EndpointCheck(heartBeat)
+    const check = new EndpointCheck(this.beatCount.value, heartBeat)
     this.checks.push(check)
     this.lastCheck.value = check
   }

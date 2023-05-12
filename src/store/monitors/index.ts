@@ -24,19 +24,19 @@ export function useMonitors() {
     return serviceMonitorList.get(id)
   }
 
-  const setEndpoint = (endpoint: EndPoint) => {
-    const monitor = new EndpointMonitor(endpoint)
+  const setEndpoint = (endpoint: EndPoint, beatLimit: number) => {
+    const monitor = new EndpointMonitor(endpoint, { queueLimit: beatLimit })
     endpointMonitorList.set(monitor.id, monitor)
 
     return monitor
   }
 
-  const setService = (service: Service): ServiceMonitor => {
+  const setService = (service: Service, beatLimit: number): ServiceMonitor => {
     const serviceMonitor = new ServiceMonitor(service)
     serviceMonitorList.set(serviceMonitor.id, serviceMonitor)
 
     service.points.forEach((ep) => {
-      serviceMonitor.addEndpointMonitor(setEndpoint(ep))
+      serviceMonitor.addEndpointMonitor(setEndpoint(ep, beatLimit))
     })
 
     return serviceMonitor
