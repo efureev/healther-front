@@ -35,10 +35,10 @@ export default ({ command, mode }: ConfigEnv) => {
     // css: {
     //   preprocessorOptions: {
     //     scss: {
-    // additionalData: `@use "@/assets/styles/element/index.scss" as *;`
-    // }
-    // }
-    // }
+    //       additionalData: '@use "@/assets/styles/vendors/elements/vars.scss" as *;',
+    //     },
+    //   },
+    // },
     server: {
       // Listening on all local IPs
       host: true,

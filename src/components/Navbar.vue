@@ -25,6 +25,7 @@ const isHomepage = computed(() => route.path === '/')
       <h1 absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center text-xl font-light tracking-2px pointer-events-none>
         Healther
       </h1>
+      <MonitorSearch flex-none w25 />
       <SizeSlider class="size-slider" w20 />
 
       <a class="non-dragging" i-carbon-logo-github icon-button flex-none href="https://github.com/efureev/healther-front" target="_blank" title="GitHub" />

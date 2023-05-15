@@ -19,7 +19,7 @@ onMounted(() => {
 
 <template>
   <div :class="`block-size-${monitorBlockSize}`" flex="~ wrap">
-    <template v-for="service in serviceStore.serviceList" :key="service.url">
+    <template v-for="service in serviceStore.filteredServiceList" :key="service.url">
       <Monitor :service="service" />
     </template>
   </div>
