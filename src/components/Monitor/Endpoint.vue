@@ -8,13 +8,30 @@ import { statusToColor } from '@/utils/statusToColor'
 import type { EndpointCheck } from '@/store/monitors/EndpointCheck'
 import BeatRulesResult from '@/components/Monitor/BeatRulesResult.vue'
 
+// import { useMonitor } from '@/store/monitor'
+
 const { monitor } = defineProps<{
   monitor: EndpointMonitor
 }>()
+
+// const monitorStore = useMonitor()
+
+// monitorStore.endPointSelected
+
+function onSelected(e: MouseEvent) {
+  console.log(e)
+  const epm: HTMLDivElement = e.target
+  const epLine = epm.parentNode
+  for (const child of epLine.children)
+    child.classList.remove('selected')
+
+  epm.classList.add('selected')
+}
+
 const color = (status: StatusEnum) => statusToColor(status)
 
 const selectedBeat: Ref<Nullable<EndpointCheck>> = ref(null)
-const checks = ref(null)
+// const checks = ref(null)
 
 // watch(monitor.lastCheck, (val: Nullable<EndpointCheck>) => {
 //   console.log('lastCheck', val)
@@ -45,7 +62,7 @@ function onBeatClick(e: MouseEvent, check: EndpointCheck) {
 </script>
 
 <template>
-  <div my2 px2 pb2 border="~ base" bg-base rounded class="endpoint">
+  <div my2 px2 pb2 border="~ base" bg-base rounded class="endpoint" @click="onSelected">
     <div flex style="justify-content: space-between;" pos-relative>
       <a :href="monitor.url" target="_blank" text-sm color-gray-600>{{ monitor.name }}</a>
       <div>
@@ -56,14 +73,7 @@ function onBeatClick(e: MouseEvent, check: EndpointCheck) {
 
     <div v-on-click-outside="clearSelected" py1 flex="~ gap1" style="justify-content: flex-end; min-height: 20px" class="beat-line">
       <template v-for="(check, idx) in monitor.checks.toArray()" :key="idx">
-        <div
-          :ref="`beat-${check.id}`"
-          style="flex: 0 1 auto; border-radius: 2px;"
-          h-3 w-2
-          :title="check.result.processing.duration.str"
-          :class="`bg-${color(check.status())}`"
-          @click="(e) => onBeatClick(e, check)"
-        />
+        <div :ref="`beat-${check.id}`" style="flex: 0 1 auto; border-radius: 2px;" h-3 w-2 :title="check.result.processing.duration.str" :class="`bg-${color(check.status())}`" @click="(e) => onBeatClick(e, check)" />
       </template>
     </div>
 

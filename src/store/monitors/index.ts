@@ -4,6 +4,10 @@ import { ServiceMonitor } from './ServiceMonitor'
 import type { EndPoint, EndPointID } from '@/@types/endpoints'
 import type { Service } from '@/@types/services'
 import type { HeartBeatEvent } from '@/@types/events'
+import { getBeats } from '@/api/services'
+
+// import { useMonitor } from '@/store/monitor'
+// const serviceStore = useMonitor()
 
 const serviceMonitorList = new Map<string, ServiceMonitor>()
 const endpointMonitorList = new Map<string, EndpointMonitor>()
@@ -24,8 +28,13 @@ export function useMonitors() {
     return serviceMonitorList.get(id)
   }
 
-  const setEndpoint = (endpoint: EndPoint, beatLimit: number) => {
+  const setEndpoint = (endpoint: EndPoint, { beats, beatLimit }: {
+    beats: HeartBeatEvent[]
+    beatLimit: number
+  }) => {
     const monitor = new EndpointMonitor(endpoint, { queueLimit: beatLimit })
+    monitor.loadChecks(beats)
+
     endpointMonitorList.set(monitor.id, monitor)
 
     return monitor
@@ -35,9 +44,19 @@ export function useMonitors() {
     const serviceMonitor = new ServiceMonitor(service)
     serviceMonitorList.set(serviceMonitor.id, serviceMonitor)
 
+    getBeats(service.id).then((beats) => {
+      service.points.forEach((ep) => {
+        serviceMonitor.addEndpointMonitor(setEndpoint(ep, { beats, beatLimit }))
+      })
+    })
+    // const beats = await getBeats(service.id)
+    // console.log(beats)
+
+    /*
     service.points.forEach((ep) => {
       serviceMonitor.addEndpointMonitor(setEndpoint(ep, beatLimit))
     })
+    */
 
     return serviceMonitor
   }

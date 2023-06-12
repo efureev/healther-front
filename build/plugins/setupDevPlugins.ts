@@ -1,10 +1,9 @@
 import eslintPlugin from 'vite-plugin-eslint'
-import type { EnvMode } from '../EnvMode'
 import { visualizer } from 'rollup-plugin-visualizer'
 
 // import setupMockServer from './mock'
 
-export default function setupDevPlugins(viteEnv: ViteEnv, envMode: EnvMode) {
+export default function setupDevPlugins() {
   // const { VITE_USE_MOCK } = viteEnv
 
   return [

@@ -41,7 +41,7 @@ yarn build
 - [ ] Translates
 - [ ] Cert check
 - [ ] Check App's update
-- [x] Monitor' start time
+- [x] Monitor's start time
 - [ ] Reconnect to ws-service
 - [ ] Notification
     - WebHooks

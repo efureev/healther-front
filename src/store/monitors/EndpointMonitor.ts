@@ -51,6 +51,12 @@ export default class EndpointMonitor {
     this.lastCheck.value = check
   }
 
+  public loadChecks(beats: HeartBeatEvent[]) {
+    beats.forEach((b) => {
+      this.addCheck(b)
+    })
+  }
+
   private incBeat() {
     this.beatCount.value += 1
   }

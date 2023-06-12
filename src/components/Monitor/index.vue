@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import Block from './Block.vue'
-import Endpoint from './Endpoint.vue'
 import type { Service } from '@/@types/services'
 import { useMonitors } from '@/store/monitors'
 import CircleStatus from '@/components/CircleStatus.vue'
 import { monitorBeatLimit } from '@/store'
+import Endpoint from '@/components/Monitor/Endpoint.vue'
 
 const { service } = defineProps<{
   service: Service

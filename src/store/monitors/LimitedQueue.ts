@@ -21,13 +21,13 @@ export class LimitedQueue<T> {
 
   public push(item: T): void {
     if (this.isReachLimit())
-      this.data.value.shift()
+      unref(this.data).shift()
 
-    this.data.value.push(item)
+    unref(this.data).push(item)
   }
 
   public size(): number {
-    return this.data.value.length
+    return unref(this.data).length
   }
 
   private isReachLimit(): boolean {
@@ -54,7 +54,7 @@ export class LimitedQueue<T> {
   // }
 
   public reset(): void {
-    this.data.value.length = 0
+    unref(this.data).length = 0
   }
 
   public setLimit(size: number): void {

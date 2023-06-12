@@ -4,7 +4,13 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 export default function setupAutoImport() {
   return AutoImport({
-    imports: ['vue', 'vue-router', 'pinia', '@vueuse/core'],
+    imports: ['vue', 'vue-router', 'pinia', '@vueuse/core',
+      {
+        '@vueuse/shared': [
+          'toValue', // import { toValue } from '@vueuse/shared',
+        ],
+      },
+    ],
     // imports: ['vue', 'vue-router', 'pinia', 'vue-i18n', 'vue/macros', '@vueuse/head', '@vueuse/core'],
     vueTemplate: true,
     dts: 'types/auto-imports.d.ts',

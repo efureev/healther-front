@@ -78,6 +78,7 @@ export default ({ command, mode }: ConfigEnv) => {
         'vue-router',
         '@vue/shared',
         '@vueuse/core',
+        '@vueuse/shared',
         '@iconify-json/carbon',
       ],
       exclude: [

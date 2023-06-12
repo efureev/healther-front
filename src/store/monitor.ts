@@ -7,6 +7,7 @@ import { getServiceList } from '@/api/services'
 export interface IMonitorsState {
   serviceList: Services
   monitorListFilter: string
+  endPointSelected: string
 }
 
 export const useMonitor = defineStore('monitor', {
@@ -14,6 +15,7 @@ export const useMonitor = defineStore('monitor', {
     return {
       serviceList: [],
       monitorListFilter: '',
+      endPointSelected: '',
     }
   },
   getters: {

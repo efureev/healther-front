@@ -8,11 +8,10 @@ export class ServiceMonitor {
   public readonly id: string
 
   public readonly status: ComputedRef<StatusEnum> = computed(() => this.computeStatus())
-
-  // public readonly status: ComputedRef<StatusEnum> = computed(() => this.computeStatus())
   public readonly statusText: ComputedRef<string> = computed(() => this.computeStatusText())
-  //
-  public readonly endpointMonitors = new Map<string, EndpointMonitor>()
+
+  public readonly endpointMonitors = reactive(new Map<string, EndpointMonitor>())
+  // public readonly endpointSize: ComputedRef<number> = computed(() => this.endpointMonitors.size)
 
   constructor(service: Service) {
     this.id = service.url
